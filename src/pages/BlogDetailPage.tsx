@@ -16,12 +16,12 @@ const BlogDetailPage: React.FC = () => {
   useEffect(() => {
     axios.get(`/blog-posts/${id}`) 
       .then(response => {
-        
+        console.log(response.data); 
         setBlog(response.data.data); 
         setLoading(false);
       })
       .catch(err => {
-        setError('Error fetching blog post');
+        setError('Error ...fetching blog post');
         setLoading(false);
       });
   }, [id]);
@@ -35,11 +35,10 @@ const BlogDetailPage: React.FC = () => {
   }
   
   return (
-    <body>
-      <div>
+    
+      <div className="container">
         {blog ? <BlogDetail blog={blog} /> : <p>No post not found</p>}
       </div>
-    </body>
   );
 
 };

@@ -8,13 +8,21 @@ import BlogDetailPage from './pages/BlogDetailPage';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <Router>
       <header className="App-header">
+        <div className='logo'>
         <img src={logo} className="App-logo" alt="logo" />
 
         <h1>Arjun Blog</h1>
+        </div>
         <nav className="header-nav">
-          <Router>
+           <a href="/">Home</a>
+           <a href="/about">About</a>
+           <a href="/contact">Contact</a>
+        </nav>
+        
+      </header>
+      
             <Routes>
        
               <Route path="/" element={<BlogListPage />} />
@@ -22,11 +30,7 @@ const App: React.FC = () => {
        
               <Route path="/blogs/:id" element={<BlogDetailPage />} />
            </Routes>
-          </Router>
-        </nav>
-        
-      </header>
-    </div>
+      </Router>
   );
 }
 

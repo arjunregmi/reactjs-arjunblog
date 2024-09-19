@@ -28,28 +28,28 @@ const BlogListPage: React.FC = () => {
 
   if (loading) {
     return  (
-      <body>
+      <div className="container">
        <p>Please wait. Loading...</p>
-       </body>
+       </div>
        );
   }
 
   if (error) {
     
     return  (
-    <body>
+    <div className="container">
    
      <p>{error}</p>
-     </body>
+     </div>
     );
   }
 
   return (
-    <body>
-      <div>
+    <div className="container">
+      
         <BlogList blogs={blogs} />
-      </div>
-    </body>
+      
+    </div>
   );
 };
 

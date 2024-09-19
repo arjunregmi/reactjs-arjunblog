@@ -8,7 +8,7 @@ interface BlogDetailProps {
 
 const BlogDetail: React.FC<BlogDetailProps> = ({ blog }) => {
   return (
-    <div>
+    <div className='blog-post'>
       <h1>{blog.post_title}</h1>
       <p>{blog.post_content}</p>
       <p >Blog Author: {blog.author || 'Anonymous'}</p>

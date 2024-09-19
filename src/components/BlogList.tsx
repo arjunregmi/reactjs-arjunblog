@@ -9,13 +9,13 @@ interface BlogListProps {
 
 const BlogList: React.FC<BlogListProps> = ({ blogs }) => {
   return (
-    <div>
-     <ul>
+    <div >
+     <ul className='blog-list'>
        {blogs.map((blog) => (
-         <li key={blog._id}>
+         <li key={blog.id}>
            <h2>{blog.post_title}</h2>
-           <p>{blog.post_content}</p>
-           <Link to={`/blogs/${blog._id}`}>Read More</Link> 
+           <p>{blog.post_content.slice(0, 300)}...</p>
+           <Link to={`/blogs/${blog.id}`}>Read More</Link> 
          </li>
        ))}
      </ul>
